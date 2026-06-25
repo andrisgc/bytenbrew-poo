@@ -28,6 +28,11 @@ public class ClienteVip extends Cliente implements Conversao {
         expPoints -= converterPontos(valorPedido);
     }
 
+    @Override
+    public final String getCpf() {
+        return cpf;
+    }
+
     public String toString() {
         String resposta = super.toString();
         resposta += "CPF: " + cpf + '\n';

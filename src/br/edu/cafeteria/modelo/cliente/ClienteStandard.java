@@ -36,7 +36,8 @@ public class ClienteStandard extends Cliente implements Conversao {
         return expPoints;
     }
 
-    public String getCpf() {
+    @Override
+    public final String getCpf() {
         return cpf;
     }
 

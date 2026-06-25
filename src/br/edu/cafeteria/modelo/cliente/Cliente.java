@@ -13,6 +13,10 @@ public class Cliente {
         return nome;
     }
 
+    public String getCpf() {
+        return null;
+    }
+
     public String toString() {
         String resposta = "";
         resposta += "NOME: " + nome + '\n';
