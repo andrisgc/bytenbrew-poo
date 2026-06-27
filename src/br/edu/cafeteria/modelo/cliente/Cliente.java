@@ -7,6 +7,10 @@ public class Cliente {
         this.nome = nome;
     }
 
+    public boolean verificaCliente() {
+        return false;
+    }
+
     public final void setNome(String nome) { this.nome = nome; }
 
     public final String getNome() {
