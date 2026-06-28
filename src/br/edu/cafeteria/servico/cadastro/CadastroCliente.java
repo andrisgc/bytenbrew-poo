@@ -11,7 +11,7 @@ public class CadastroCliente {
     private int numeroClientes;
 
     public CadastroCliente() {
-        cadastroCliente = new ArrayList<Cliente>();
+        cadastroCliente = new ArrayList<>();
         numeroClientes = 0;
     }
 
@@ -36,14 +36,15 @@ public class CadastroCliente {
 
     public void removerCliente(Cliente clienteCadastro) {
         cadastroCliente.remove(clienteCadastro);
+        numeroClientes = cadastroCliente.size();
     }
 
     public void removerCliente(String cpf) {
         cadastroCliente.removeIf(clienteCadastro -> cpf.equals(clienteCadastro.getCpf()));
+        numeroClientes = cadastroCliente.size();
     }
 
-    public void atualizarCliente(Cliente clienteCadastroNovo, String cpf) {
-        Cliente clienteCadastroAntigo = buscarCliente(cpf);
+    public void atualizarCliente(Cliente clienteCadastroNovo, Cliente clienteCadastroAntigo) {
         if (clienteCadastroAntigo != null) {
             cadastroCliente.remove(clienteCadastroAntigo);
             cadastroCliente.add(clienteCadastroNovo);
