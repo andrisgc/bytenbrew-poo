@@ -11,6 +11,12 @@ public class ClienteStandard extends Cliente {
         expPoints = 0;
     }
 
+    public ClienteStandard(String nome, String cpf, int expPoints) {
+        super (nome);
+        this.cpf = cpf;
+        this.expPoints = expPoints;
+    }
+
     @Override
     public boolean verificaCliente() {
         return true;
