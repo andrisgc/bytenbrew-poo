@@ -1,6 +1,6 @@
 package br.edu.cafeteria.modelo.cliente;
 
-public class ClienteStandard extends Cliente {
+public class ClienteStandard extends Cliente implements Conversao {
     private final static int taxaConversao = 1;
     private final String cpf;
     private int expPoints;
@@ -18,14 +18,11 @@ public class ClienteStandard extends Cliente {
     }
 
     @Override
-    public boolean verificaCliente() {
-        return true;
-    }
-
     public int converterPontos(float valorPedido) {
         return (int)(valorPedido * taxaConversao);
     }
 
+    @Override
     public void adicionarPontos(float valorPedido) {
         expPoints += converterPontos(valorPedido);
     }
