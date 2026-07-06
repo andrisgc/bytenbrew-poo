@@ -1,13 +1,13 @@
 package br.edu.cafeteria.servico.cadastro;
 
+import br.edu.cafeteria.excecao.ClienteInexistenteException;
 import br.edu.cafeteria.modelo.cliente.Cliente;
 import br.edu.cafeteria.modelo.cliente.ClienteStandard;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CadastroCliente {
-    private final List<Cliente> cadastroCliente;
+    private final ArrayList<Cliente> cadastroCliente;
     private int numeroClientes;
 
     public CadastroCliente() {
@@ -26,12 +26,12 @@ public class CadastroCliente {
         numeroClientes = cadastroCliente.size();
     }
 
-    public Cliente buscarCliente(String cpf) {
+    public Cliente buscarCliente(String cpf) throws ClienteInexistenteException {
         for (Cliente clienteCadastro : cadastroCliente) {
             if (cpf.equals(clienteCadastro.getCpf()))
                 return clienteCadastro;
         }
-        return null;
+        throw new ClienteInexistenteException("O cliente não existe.");
     }
 
     public void removerCliente(Cliente clienteCadastro) {
@@ -58,6 +58,7 @@ public class CadastroCliente {
         for (Cliente clienteCadastro : cadastroCliente) {
             resposta += clienteCadastro.toString();
             resposta += " ---------------------------- \n";
+
         }
 
         return resposta;
