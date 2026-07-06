@@ -1,32 +1,33 @@
 package br.edu.cafeteria.modelo.pedido;
 
+import br.edu.cafeteria.excecao.EstoqueInsuficienteException;
+import br.edu.cafeteria.excecao.PontosInsuficientesException;
 import br.edu.cafeteria.modelo.cliente.Cliente;
 import br.edu.cafeteria.modelo.cliente.ClienteStandard;
 import br.edu.cafeteria.modelo.cliente.ClienteVip;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Pedido {
     private final Cliente clientePedido;
-    private final List <ItemPedido> itensPedido;
-    private static int contadorPedido = 0;
+    private final ArrayList <ItemPedido> itensPedido;
+    private static int contadorPedido;
     private final int numeroPedido;
     private float valorTotal;
 
     public Pedido (Cliente clientePedido) {
         itensPedido = new ArrayList<>();
         this.clientePedido = clientePedido;
-        contadorPedido++;
-        numeroPedido = contadorPedido;
+        numeroPedido = ++contadorPedido;
     }
 
-    public void adicionarItem (ItemPedido itemPedido) {
+    public void adicionarItem (ItemPedido itemPedido) throws EstoqueInsuficienteException {
+        itemPedido.adicionarQuantidadeItemPedido(1);
         itensPedido.add(itemPedido);
     }
 
-    public void adicionarItem (ItemPedido itemPedido, int quantidadePedido) {
-        itemPedido.setQuantidadePedido(quantidadePedido);
+    public void adicionarItem (ItemPedido itemPedido, int quantidadePedido) throws EstoqueInsuficienteException {
+        itemPedido.adicionarQuantidadeItemPedido(quantidadePedido);
         itensPedido.add(itemPedido);
     }
 
@@ -35,18 +36,17 @@ public class Pedido {
         return true;
     }
 
-    public boolean removerItem (ItemPedido itemPedido, int quantidadePedido) {
-        if (itemPedido.getQuantidadePedido() > quantidadePedido)
-            return itemPedido.removerQuantidadeItemPedido(quantidadePedido);
-        else if (itemPedido.getQuantidadePedido() == quantidadePedido) {
-            return itensPedido.remove(itemPedido);
+    public void removerItem (ItemPedido itemPedido, int quantidadePedido) {
+        if (itemPedido.getQuantidadeItemPedido() > quantidadePedido)
+            itemPedido.removerQuantidadeItemPedido(quantidadePedido);
+        else if (itemPedido.getQuantidadeItemPedido() == quantidadePedido) {
+            itensPedido.remove(itemPedido);
         }
-        return false;
     }
 
     public boolean acharItem (String codigoIdentificador) {
         for (ItemPedido itemPedido : itensPedido) {
-            if (codigoIdentificador.equals(itemPedido.produtoPedido.getCodigoIdentificador())) {
+            if (codigoIdentificador.equals(itemPedido.getProdutoItemPedido().getCodigoIdentificador())) {
                 return true;
             }
         }
@@ -55,7 +55,7 @@ public class Pedido {
 
     public ItemPedido buscarItem (String codigoIdentificador) {
         for (ItemPedido itemPedido : itensPedido) {
-            if (codigoIdentificador.equals(itemPedido.produtoPedido.getCodigoIdentificador())) {
+            if (codigoIdentificador.equals(itemPedido.getProdutoItemPedido().getCodigoIdentificador())) {
                 return itemPedido;
             }
         }
@@ -63,15 +63,28 @@ public class Pedido {
     }
 
     public void calcularValor () {
+        valorTotal = 0;
         for (ItemPedido itemPedido : itensPedido) {
-            valorTotal = 0;
-            valorTotal += (itemPedido.produtoPedido.getPreco()) * itemPedido.getQuantidadePedido();
+            valorTotal += (itemPedido.getValorItemPedido()) * itemPedido.getQuantidadeItemPedido();
         }
     }
 
-    public void calcularDesconto (int pontosNecessarios, ClienteVip clientePedido) {
+    public void calcularValorDesconto () {
+        valorTotal = 0;
+        for (ItemPedido itemPedido : itensPedido) {
+            valorTotal += (itemPedido.getValorItemPedidoDesconto()) * itemPedido.getQuantidadeItemPedido();
+        }
+    }
+
+    public void calcularPontos(int pontosNecessarios, ClienteVip clientePedido) {
         clientePedido.removerPontos(pontosNecessarios);
-        valorTotal -= (float) pontosNecessarios / 10;
+    }
+
+    public void calcularPontos(int pontosNecessarios) throws PontosInsuficientesException {
+        if (((ClienteVip)clientePedido).getExpPoints() < pontosNecessarios) {
+            throw new PontosInsuficientesException("O cliente não possui pontos suficientes.");
+        }
+        valorTotal -= ((float)pontosNecessarios) / 10;
     }
 
     public int verificarPontosNecessarios() {
@@ -108,12 +121,35 @@ public class Pedido {
         return resposta;
     }
 
+    public String toStringDesconto() {
+        String resposta = "";
+        resposta += "NOME DO CLIENTE: " + clientePedido.getNome() + '\n';
+        resposta += "NÚMERO DO PEDIDO: " + numeroPedido + '\n';
+        resposta += "ITENS: \n";
+
+        int i = 1;
+        for (ItemPedido itemPedido : itensPedido) {
+            resposta += i + " - ";
+            resposta += itemPedido.toStringDesconto();
+            i++;
+        }
+
+        calcularValorDesconto();
+        resposta += "VALOR TOTAL: " + valorTotal + '\n';
+
+        return resposta;
+    }
+
     public Cliente getClientePedido() {
         return clientePedido;
     }
 
     public float getValorTotal() {
         return valorTotal;
+    }
+
+    public ArrayList<ItemPedido> getItensPedido() {
+        return itensPedido;
     }
 
 }
