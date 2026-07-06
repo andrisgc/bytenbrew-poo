@@ -1,47 +1,66 @@
 package br.edu.cafeteria.modelo.pedido;
 
+import br.edu.cafeteria.excecao.EstoqueInsuficienteException;
 import br.edu.cafeteria.modelo.produto.Produto;
 
 public class ItemPedido {
-    protected Produto produtoPedido;
-    protected int quantidadePedido;
+    private final Produto produtoItemPedido;
+    private int quantidadeItemPedido;
+    private final float valorItemPedido;
+    private float valorItemPedidoDesconto;
 
-    public ItemPedido(Produto produtoPedido, int quantidadePedido) {
-        this.produtoPedido = produtoPedido;
-        this.quantidadePedido = quantidadePedido;
+    public ItemPedido(Produto produtoItemPedido) {
+        this.produtoItemPedido = produtoItemPedido;
+        valorItemPedido = produtoItemPedido.getPreco();
+        valorItemPedidoDesconto = valorItemPedido;
     }
 
-    public boolean adicionarQuantidadeItemPedido(int adicionarQuantidade) {
-        quantidadePedido += adicionarQuantidade;
-        return true;
+    public void adicionarQuantidadeItemPedido(int adicionarQuantidade) throws EstoqueInsuficienteException {
+        if (adicionarQuantidade > produtoItemPedido.getEstoque()) {
+            throw new EstoqueInsuficienteException("Estoque insuficiente do produto " + produtoItemPedido.getNomeProduto());
+        }
+
+        quantidadeItemPedido += adicionarQuantidade;
     }
 
-    public boolean removerQuantidadeItemPedido(int removerQuantidade) {
-        quantidadePedido -= removerQuantidade;
-        return true;
+    public void removerQuantidadeItemPedido(int removerQuantidade) {
+        quantidadeItemPedido -= removerQuantidade;
     }
 
-    public Produto getProdutoPedido() {
-        return produtoPedido;
-    }
-
-    public void setProdutoPedido(Produto produtoPedido) {
-        this.produtoPedido = produtoPedido;
-    }
-
-    public int getQuantidadePedido() {
-        return quantidadePedido;
-    }
-
-    public void setQuantidadePedido(int quantidadePedido) {
-        this.quantidadePedido = quantidadePedido;
+    public void aplicarDesconto(float porcentagemDesconto) {
+        valorItemPedidoDesconto = valorItemPedido - (valorItemPedido * porcentagemDesconto);
     }
 
     public String toString() {
         String resposta = "";
-        resposta += quantidadePedido + "x ";
-        resposta += produtoPedido.getNomeProduto() + '\n';
+        resposta += quantidadeItemPedido + "x ";
+        resposta += produtoItemPedido.getNomeProduto() + " - " + valorItemPedido + '\n';
 
         return resposta;
+    }
+
+    public String toStringDesconto() {
+        String resposta = "";
+        resposta += quantidadeItemPedido + "x ";
+        resposta += produtoItemPedido.getNomeProduto() + " - " + valorItemPedidoDesconto + '\n';
+        resposta += " ---------------------------- \n";
+
+        return resposta;
+    }
+
+    public float getValorItemPedido() {
+        return valorItemPedido;
+    }
+
+    public float getValorItemPedidoDesconto() {
+        return valorItemPedidoDesconto;
+    }
+
+    public Produto getProdutoItemPedido() {
+        return produtoItemPedido;
+    }
+
+    public int getQuantidadeItemPedido() {
+        return quantidadeItemPedido;
     }
 }
