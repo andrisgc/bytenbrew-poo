@@ -21,22 +21,6 @@ public class Produto {
         estoque -= quantidade;
     }
 
-    public final void setCodigoIdentificador(String codigoIdentificador) {
-        this.codigoIdentificador = codigoIdentificador;
-    }
-
-    public final void setEstoque(int estoque) {
-        this.estoque = estoque;
-    }
-
-    public final void setNomeProduto(String nomeProduto) {
-        this.nomeProduto = nomeProduto;
-    }
-
-    public final void setPreco(float preco) {
-        this.preco = preco;
-    }
-
     public final float getPreco() {
         return preco;
     }

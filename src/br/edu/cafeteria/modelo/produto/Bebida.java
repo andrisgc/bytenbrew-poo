@@ -1,28 +1,12 @@
 package br.edu.cafeteria.modelo.produto;
 
 public class Bebida extends Produto {
-    protected String tamanhoBebida;
+    protected char tamanhoBebida;
     protected int cafeinaBebida;
 
-    public Bebida (String codigoIdentificador, String nomeProduto, int estoque, float preco, int cafeinaBebida, String tamanhoBebida) {
+    public Bebida (String codigoIdentificador, String nomeProduto, int estoque, float preco, int cafeinaBebida, char tamanhoBebida) {
         super (codigoIdentificador, nomeProduto, estoque, preco);
         this.tamanhoBebida = tamanhoBebida;
-        this.cafeinaBebida = cafeinaBebida;
-    }
-
-    public String getTamanhoBebida() {
-        return tamanhoBebida;
-    }
-
-    public void setTamanhoBebida(String tamanhoBebida) {
-        this.tamanhoBebida = tamanhoBebida;
-    }
-
-    public int getCafeinaBebida() {
-        return cafeinaBebida;
-    }
-
-    public void setCafeinaBebida(int cafeinaBebida) {
         this.cafeinaBebida = cafeinaBebida;
     }
 
