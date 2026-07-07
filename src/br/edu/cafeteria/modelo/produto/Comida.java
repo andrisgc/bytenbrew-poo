@@ -1,8 +1,8 @@
 package br.edu.cafeteria.modelo.produto;
 
 public class Comida extends Produto {
-    protected int tempoPreparo;
-    protected String indicadorRestricao;
+    private final int tempoPreparo;
+    private final String indicadorRestricao;
 
     public Comida (String codigoIdentificador, String nomeProduto, int estoque, float preco, int tempoPreparo, String indicadorRestricao) {
         super (codigoIdentificador, nomeProduto, estoque, preco);

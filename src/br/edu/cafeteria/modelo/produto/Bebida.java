@@ -1,8 +1,8 @@
 package br.edu.cafeteria.modelo.produto;
 
 public class Bebida extends Produto {
-    protected char tamanhoBebida;
-    protected int cafeinaBebida;
+    private final char tamanhoBebida;
+    private final int cafeinaBebida;
 
     public Bebida (String codigoIdentificador, String nomeProduto, int estoque, float preco, int cafeinaBebida, char tamanhoBebida) {
         super (codigoIdentificador, nomeProduto, estoque, preco);
