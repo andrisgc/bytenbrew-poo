@@ -123,6 +123,7 @@ public class MenuPedido {
             pedido.removerItem(itemPedido, respostaQuantidadeItemPedido);
         } else {
             System.out.println("Este produto não foi adicionado ao seu pedido.");
+            MenuPrincipal.retornarMenu();
         }
     }
 
