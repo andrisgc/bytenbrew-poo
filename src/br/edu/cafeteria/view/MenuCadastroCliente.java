@@ -2,6 +2,7 @@ package br.edu.cafeteria.view;
 
 import br.edu.cafeteria.excecao.ClienteInexistenteException;
 import br.edu.cafeteria.modelo.cliente.Cliente;
+import br.edu.cafeteria.modelo.cliente.ClienteCasual;
 import br.edu.cafeteria.modelo.cliente.ClienteStandard;
 import br.edu.cafeteria.modelo.cliente.ClienteVip;
 import br.edu.cafeteria.servico.cadastro.CadastroCliente;
@@ -94,7 +95,7 @@ public class MenuCadastroCliente {
                 System.out.println("Insira o nome do cliente: ");
                 scanner.nextLine();
                 String nome = scanner.nextLine();
-                return new Cliente(nome);
+                return new ClienteCasual(nome);
             } else {
                 System.out.println("Opção inválida. Por favor, digite novamente. (S/N)");
             }

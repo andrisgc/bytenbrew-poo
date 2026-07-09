@@ -1,6 +1,6 @@
 package br.edu.cafeteria.modelo.cliente;
 
-public class Cliente {
+public abstract class Cliente {
     protected String nome;
 
     public Cliente(String nome) {
@@ -11,9 +11,7 @@ public class Cliente {
         return nome;
     }
 
-    public String getCpf() {
-        return null;
-    }
+    public abstract String getCpf();
 
     public String toString() {
         String resposta = "";
