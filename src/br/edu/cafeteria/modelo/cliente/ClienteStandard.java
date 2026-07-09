@@ -31,6 +31,7 @@ public class ClienteStandard extends Cliente implements Conversao {
         return new ClienteVip(nome, cpf, expPoints);
     }
 
+    @Override
     public int getExpPoints() {
         return expPoints;
     }

@@ -30,6 +30,7 @@ public class ClienteVip extends Cliente implements Conversao {
         return cpf;
     }
 
+    @Override
     public final int getExpPoints() {
         return expPoints;
     }

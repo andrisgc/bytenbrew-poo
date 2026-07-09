@@ -3,8 +3,8 @@ package br.edu.cafeteria.modelo.pedido;
 import br.edu.cafeteria.excecao.EstoqueInsuficienteException;
 import br.edu.cafeteria.excecao.PontosInsuficientesException;
 import br.edu.cafeteria.modelo.cliente.Cliente;
-import br.edu.cafeteria.modelo.cliente.ClienteStandard;
 import br.edu.cafeteria.modelo.cliente.ClienteVip;
+import br.edu.cafeteria.modelo.cliente.Conversao;
 
 import java.util.ArrayList;
 
@@ -93,10 +93,8 @@ public class Pedido {
 
     public int verificarPontos (Cliente clientePedido) {
         int pontosCliente = 0;
-        if (clientePedido instanceof ClienteStandard) {
-            pontosCliente = ((ClienteStandard) clientePedido).getExpPoints();
-        } else if (clientePedido instanceof ClienteVip) {
-            pontosCliente = ((ClienteVip) clientePedido).getExpPoints();
+        if (clientePedido instanceof Conversao) {
+            pontosCliente = ((Conversao) clientePedido).getExpPoints();
         }
 
         return pontosCliente;
