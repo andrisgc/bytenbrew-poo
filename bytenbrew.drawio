@@ -1,0 +1,293 @@
+<mxfile host="Electron" agent="uml-generator">
+  <diagram name="Diagrama de Classes - ByteNBrew" id="uml-bytenbrew">
+    <mxGraphModel dx="4171" dy="1469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="legendTitle" parent="1" style="text;html=1;fontSize=14;fontStyle=1;align=left;" value="Legenda de pacotes" vertex="1">
+          <mxGeometry height="24" width="240" x="1040" y="1500" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_app" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=11;align=left;spacingLeft=6;" value="app" vertex="1">
+          <mxGeometry height="26" width="220" x="1040" y="1530" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_view" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;align=left;spacingLeft=6;" value="view" vertex="1">
+          <mxGeometry height="26" width="220" x="1040" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_servico_cadastro" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;align=left;spacingLeft=6;" value="servico.cadastro" vertex="1">
+          <mxGeometry height="26" width="220" x="1040" y="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_servico_promocao" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;align=left;spacingLeft=6;" value="servico.promocao" vertex="1">
+          <mxGeometry height="26" width="220" x="1040" y="1620" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_modelo_pedido" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=11;align=left;spacingLeft=6;" value="modelo.pedido" vertex="1">
+          <mxGeometry height="26" width="220" x="1040" y="1650" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_modelo_cliente" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;align=left;spacingLeft=6;" value="modelo.cliente" vertex="1">
+          <mxGeometry height="26" width="220" x="1040" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_modelo_produto" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=6;" value="modelo.produto" vertex="1">
+          <mxGeometry height="26" width="220" x="1040" y="1710" as="geometry" />
+        </mxCell>
+        <mxCell id="Conversao" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&amp;laquo;interface&amp;raquo;&lt;br&gt;&lt;b&gt;Conversao&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ converterPontos(valorPedido: float): int&lt;br&gt;+ adicionarPontos(valorPedido: float): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="95" width="260" x="80" y="1862" as="geometry" />
+        </mxCell>
+        <mxCell id="Cliente" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;Cliente&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;# nome: String&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ Cliente(nome: String)&lt;br&gt;+ getNome(): String&lt;br&gt;+ getCpf(): String&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="148" width="260" x="80" y="1283.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ClienteStandard" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;ClienteStandard&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- taxaConversao: int {static}&lt;br&gt;- cpf: String&lt;br&gt;- expPoints: int&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ ClienteStandard(nome, cpf: String)&lt;br&gt;+ ClienteStandard(nome, cpf: String, expPoints: int)&lt;br&gt;+ converterPontos(valorPedido: float): int&lt;br&gt;+ adicionarPontos(valorPedido: float): void&lt;br&gt;+ converterCliente(): ClienteVip&lt;br&gt;+ getExpPoints(): int&lt;br&gt;+ getCpf(): String&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="244" width="300" x="-130" y="1517" as="geometry" />
+        </mxCell>
+        <mxCell id="ClienteVip" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;ClienteVip&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- taxaConversao: int {static}&lt;br&gt;- cpf: String&lt;br&gt;- expPoints: int&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ ClienteVip(nome, cpf: String, expPoints: int)&lt;br&gt;+ converterPontos(valorPedido: float): int&lt;br&gt;+ adicionarPontos(valorPedido: float): void&lt;br&gt;+ removerPontos(expPoints: int): void&lt;br&gt;+ getCpf(): String&lt;br&gt;+ getExpPoints(): int&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="228" width="300" x="250" y="1525" as="geometry" />
+        </mxCell>
+        <mxCell id="Produto" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;Produto&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;# codigoIdentificador: String&lt;br&gt;# nomeProduto: String&lt;br&gt;# estoque: int&lt;br&gt;# preco: float&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ Produto(codigoIdentificador, nomeProduto: String, estoque: int, preco: float)&lt;br&gt;+ somarEstoque(quantidade: int): void&lt;br&gt;+ subtrairEstoque(quantidade: int): void&lt;br&gt;+ getPreco(): float&lt;br&gt;+ getEstoque(): int&lt;br&gt;+ getNomeProduto(): String&lt;br&gt;+ getCodigoIdentificador(): String&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="260" width="320" x="980" y="875" as="geometry" />
+        </mxCell>
+        <mxCell id="Bebida" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;Bebida&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- tamanhoBebida: char&lt;br&gt;- cafeinaBebida: int&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ Bebida(codigoIdentificador, nomeProduto, ..., cafeinaBebida, tamanhoBebida)&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="132" width="300" x="830" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="ItemPedido" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;ItemPedido&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- produtoItemPedido: Produto&lt;br&gt;- quantidadeItemPedido: int&lt;br&gt;- valorItemPedido: float&lt;br&gt;- valorItemPedidoDesconto: float&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ ItemPedido(produtoItemPedido: Produto)&lt;br&gt;+ adicionarQuantidadeItemPedido(qtd: int): void&lt;br&gt;+ removerQuantidadeItemPedido(qtd: int): void&lt;br&gt;+ aplicarDesconto(porcentagemDesconto: float): void&lt;br&gt;+ toString(): String&lt;br&gt;+ toStringDesconto(): String&lt;br&gt;+ getValorItemPedido(): float&lt;br&gt;+ getValorItemPedidoDesconto(): float&lt;br&gt;+ getProdutoItemPedido(): Produto&lt;br&gt;+ getQuantidadeItemPedido(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="292" width="320" x="430" y="859" as="geometry" />
+        </mxCell>
+        <mxCell id="Pedido" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;Pedido&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- clientePedido: Cliente&lt;br&gt;- itensPedido: ArrayList&amp;lt;ItemPedido&amp;gt;&lt;br&gt;- contadorPedido: int {static}&lt;br&gt;- numeroPedido: int&lt;br&gt;- valorTotal: float&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ Pedido(clientePedido: Cliente)&lt;br&gt;+ adicionarItem(itemPedido: ItemPedido): void&lt;br&gt;+ adicionarItem(itemPedido: ItemPedido, qtd: int): void&lt;br&gt;+ removerItem(itemPedido: ItemPedido): boolean&lt;br&gt;+ removerItem(itemPedido: ItemPedido, qtd: int): void&lt;br&gt;+ acharItem(codigoIdentificador: String): boolean&lt;br&gt;+ buscarItem(codigoIdentificador: String): ItemPedido&lt;br&gt;+ calcularValor(): void&lt;br&gt;+ calcularValorDesconto(): void&lt;br&gt;+ calcularPontos(pontosNecessarios: int, cliente: ClienteVip): void&lt;br&gt;+ calcularPontos(pontosNecessarios: int): void&lt;br&gt;+ verificarPontosNecessarios(): int&lt;br&gt;+ verificarPontos(clientePedido: Cliente): int&lt;br&gt;+ toString(): String&lt;br&gt;+ toStringDesconto(): String&lt;br&gt;+ getClientePedido(): Cliente&lt;br&gt;+ getValorTotal(): float&lt;br&gt;+ getItensPedido(): ArrayList&amp;lt;ItemPedido&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="436" width="340" x="40" y="787" as="geometry" />
+        </mxCell>
+        <mxCell id="CadastroCliente" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;CadastroCliente&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- cadastroCliente: ArrayList&amp;lt;Cliente&amp;gt;&lt;br&gt;- numeroClientes: int&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ CadastroCliente()&lt;br&gt;+ cadastrarCliente(cliente: Cliente): void&lt;br&gt;+ cadastrarCliente(nome, cpf: String): void&lt;br&gt;+ buscarCliente(cpf: String): Cliente&lt;br&gt;+ removerCliente(cliente: Cliente): void&lt;br&gt;+ removerCliente(cpf: String): void&lt;br&gt;+ atualizarCliente(novo: Cliente, antigo: Cliente): void&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="228" width="320" x="40" y="467" as="geometry" />
+        </mxCell>
+        <mxCell id="CadastroProduto" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;CadastroProduto&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- cadastroProduto: ArrayList&amp;lt;Produto&amp;gt;&lt;br&gt;- numeroProdutos: int&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ CadastroProduto()&lt;br&gt;+ cadastrarProduto(produto: Produto): void&lt;br&gt;+ cadastrarProduto(nome, codigo, estoque, preco): void&lt;br&gt;+ cadastrarProduto(..., tamanho: char, cafeina: int): void&lt;br&gt;+ cadastrarProduto(..., tempoPreparo: int, restricao: String): void&lt;br&gt;+ buscarProduto(codigoIdentificador: String): Produto&lt;br&gt;+ removerProduto(produto: Produto): void&lt;br&gt;+ removerProduto(codigoIdentificador: String): void&lt;br&gt;+ atualizarProduto(novo: Produto, antigo: Produto): void&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="260" width="340" x="390" y="467" as="geometry" />
+        </mxCell>
+        <mxCell id="CadastroPedido" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;CadastroPedido&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- listaPedidos: ArrayList&amp;lt;Pedido&amp;gt;&lt;br&gt;- numeroPedidos: int&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ CadastroPedido()&lt;br&gt;+ adicionarPedido(pedido: Pedido): void&lt;br&gt;+ removerPedido(pedido: Pedido): void&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="164" width="300" x="760" y="467" as="geometry" />
+        </mxCell>
+        <mxCell id="Promocao" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&amp;laquo;interface&amp;raquo;&lt;br&gt;&lt;b&gt;Promocao&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ aplicarDesconto(pedido: Pedido): void&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="95" width="260" x="1090" y="467" as="geometry" />
+        </mxCell>
+        <mxCell id="DiaOrgulhoNerd" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;DiaOrgulhoNerd&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- porcentagemDesconto: float {static}&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ aplicarDesconto(pedido: Pedido): void&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="116" width="280" x="1080" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="DiaSextaGeek" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;DiaSextaGeek&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- porcentagemDesconto: float {static}&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ aplicarDesconto(pedido: Pedido): void&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="116" width="280" x="1440" y="456.5" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuCadastroCliente" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;MenuCadastroCliente&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;scanner: Scanner&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ menuCadastroCliente(cadastroCliente): void&lt;br&gt;+ menuCadastro(cadastroCliente): Cliente&lt;br&gt;+ menuDesejaCadastrar(cadastroCliente, cpf): Cliente&lt;br&gt;+ menuCadastrarCliente(cadastroCliente): Cliente&lt;br&gt;+ menuCadastrarCliente(cadastroCliente, cpf): Cliente&lt;br&gt;+ menuBuscarCliente(cadastroCliente): void&lt;br&gt;+ menuRemoverCliente(cadastroCliente): void&lt;br&gt;+ menuAtualizarCliente(cadastroCliente): void&lt;br&gt;+ menuClientesCadastrados(cadastroCliente): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="228" width="320" x="820" y="179" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuCadastroProduto" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;MenuCadastroProduto&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;scanner: Scanner&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ menuCadastroProduto(cadastroProduto): void&lt;br&gt;+ menuCadastrarProduto(cadastroProduto): void&lt;br&gt;+ menuProdutosCadastrados(cadastroProduto): void&lt;br&gt;+ menuBuscarProduto(cadastroProduto): void&lt;br&gt;+ menuRemoverProduto(cadastroProduto): void&lt;br&gt;+ menuAtualizarProduto(cadastroProduto): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="320" x="1170" y="179" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuPedido" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;MenuPedido&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;scanner: Scanner&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ menuPedido(cadastroProduto, cadastroPedido, pedido, listaPromocoes): void&lt;br&gt;+ menuPedidoAdicionar(cadastroProduto, pedido): void&lt;br&gt;+ menuPedidoRemover(pedido): void&lt;br&gt;+ menuFinalizarPedido(pedido, cadastroPedido, listaPromocoes): void&lt;br&gt;+ menuDescontoPedido(pedido, listaPromocoes): void&lt;br&gt;+ menuPagamentoPedido(pedido, cadastroPedido, clientePedido, operacao): void&lt;br&gt;+ menuListaPedidos(cadastroPedido): void&lt;br&gt;+ «enum» operacaoPontos { adicionar, remover }&lt;/div&gt;" vertex="1">
+          <mxGeometry height="212" width="360" x="430" y="179" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuPrincipal" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;MenuPrincipal&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- scanner: Scanner {static}&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ menuPrincipal(menuPedido, menuCadastroCliente, menuCadastroProduto, cadastroCliente, cadastroProduto, cadastroPedido, listaPromocoes): void&lt;br&gt;+ limparTela(): void {static}&lt;br&gt;+ retornarMenu(): void {static}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="148" width="360" x="40" y="179" as="geometry" />
+        </mxCell>
+        <mxCell id="Principal" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#F8CECC;strokeColor=#B85450;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;Principal&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ main(args: String[]): void {static}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="79" width="260" x="-320" y="213.5" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="ClienteStandard" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;jettySize=auto;strokeColor=#333333;" target="Cliente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="ClienteVip" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;jettySize=auto;strokeColor=#333333;" target="Cliente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="Comida" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;jettySize=auto;strokeColor=#333333;entryDx=0;entryDy=0;" target="Produto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="Bebida" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;jettySize=auto;strokeColor=#333333;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="Produto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="ClienteStandard" style="endArrow=block;endFill=0;endSize=16;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;jettySize=auto;strokeColor=#333333;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="Conversao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="ClienteVip" style="endArrow=block;endFill=0;endSize=16;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;jettySize=auto;strokeColor=#333333;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="Conversao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="DiaOrgulhoNerd" style="endArrow=block;endFill=0;endSize=16;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;jettySize=auto;strokeColor=#333333;" target="Promocao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="DiaSextaGeek" style="endArrow=block;endFill=0;endSize=16;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;jettySize=auto;strokeColor=#333333;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="Promocao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="Pedido" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;html=1;rounded=0;strokeColor=#333333;" target="ItemPedido">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13_m1" connectable="0" parent="e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13_m2" connectable="0" parent="e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="CadastroCliente" style="startArrow=diamondThin;startFill=0;startSize=18;endArrow=none;html=1;rounded=0;strokeColor=#333333;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" target="Cliente">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="10" y="740" />
+              <mxPoint x="10" y="1321" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14_m1" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14_m2" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="CadastroProduto" style="startArrow=diamondThin;startFill=0;startSize=18;endArrow=none;html=1;rounded=0;strokeColor=#333333;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="Produto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15_m1" connectable="0" parent="e15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15_m2" connectable="0" parent="e15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="CadastroPedido" style="startArrow=diamondThin;startFill=0;startSize=18;endArrow=none;html=1;rounded=0;strokeColor=#333333;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="Pedido">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="750" />
+              <mxPoint x="380" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16_m1" connectable="0" parent="e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16_m2" connectable="0" parent="e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="Pedido" style="endArrow=open;endFill=0;html=1;rounded=0;strokeColor=#333333;" target="Cliente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17_m1" connectable="0" parent="e17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17_m2" connectable="0" parent="e17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="ItemPedido" style="endArrow=open;endFill=0;html=1;rounded=0;strokeColor=#333333;" target="Produto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18_m1" connectable="0" parent="e18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18_m2" connectable="0" parent="e18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="ClienteStandard" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="ClienteVip">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="CadastroCliente" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" target="ClienteStandard">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-50" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="DiaSextaGeek" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="Comida">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1580" y="1180" />
+              <mxPoint x="1375" y="1180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e30" edge="1" parent="1" source="MenuCadastroCliente" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="CadastroCliente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e31" edge="1" parent="1" source="MenuCadastroProduto" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="CadastroProduto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e32" edge="1" parent="1" source="MenuPedido" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="CadastroProduto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e33" edge="1" parent="1" source="MenuPedido" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="CadastroPedido">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" edge="1" parent="1" source="MenuPedido" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="Pedido">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e35" edge="1" parent="1" source="MenuPedido" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="Promocao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e36" edge="1" parent="1" source="MenuPrincipal" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="MenuPedido">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e37" edge="1" parent="1" source="MenuPrincipal" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="MenuCadastroCliente">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="120" />
+              <mxPoint x="520" y="120" />
+              <mxPoint x="900" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e38" edge="1" parent="1" source="MenuPrincipal" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="MenuCadastroProduto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="80" />
+              <mxPoint x="790" y="80" />
+              <mxPoint x="1250" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e39" edge="1" parent="1" source="MenuPrincipal" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="CadastroCliente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e40" edge="1" parent="1" source="MenuPrincipal" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="CadastroProduto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e41" edge="1" parent="1" source="MenuPrincipal" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="CadastroPedido">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e42" edge="1" parent="1" source="MenuPrincipal" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;" target="Promocao">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e43" edge="1" parent="1" source="Principal" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MenuPrincipal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Z-vL0XcxNSPpeDR9SK1_-1" edge="1" parent="1" source="DiaOrgulhoNerd" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;strokeColor=#666666;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="Bebida" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1400" y="720" />
+              <mxPoint x="1400" y="1160" />
+              <mxPoint x="1055" y="1160" />
+            </Array>
+            <mxPoint x="1302" y="776" as="sourcePoint" />
+            <mxPoint x="2017" y="1283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Comida" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=11;fontFamily=Helvetica;spacing=2;overflow=fill;" value="&lt;div style=&quot;text-align:center;padding:4px 0;&quot;&gt;&lt;b&gt;Comida&lt;/b&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;- tempoPreparo: int&lt;br&gt;- indicadorRestricao: String&lt;/div&gt;&lt;hr size=&quot;1&quot; style=&quot;margin:0;&quot;&gt;&lt;div style=&quot;padding:4px 6px;&quot;&gt;+ Comida(codigoIdentificador, nomeProduto, ..., tempoPreparo, indicadorRestricao)&lt;br&gt;+ toString(): String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="132" width="300" x="1150" y="1230" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
